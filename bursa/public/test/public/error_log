@@ -1,0 +1,64 @@
+[26-Dec-2014 11:48:02 UTC] PHP Fatal error:  Class 'Processlisting' not found in /home/yeelee72185perak/public_html/laravel/app/controllers/ManufacturingController.php on line 23
+[26-Dec-2014 12:40:19 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/yeelee72185perak/public_html/laravel/app/storage/views/fec83f502b0768245575a5620641b83a on line 233
+[26-Dec-2014 14:53:03 UTC] PHP Fatal error:  Class 'Corebusiness' not found in /home/yeelee72185perak/public_html/laravel/app/controllers/HomeController.php on line 26
+[29-Dec-2014 12:24:06 UTC] PHP Fatal error:  Class 'Vaccancy' not found in /home/yeelee72185perak/public_html/laravel/app/controllers/AdminController.php on line 37
+[30-Dec-2014 08:20:37 UTC] PHP Fatal error:  Call to undefined function Inputget() in /home/yeelee72185perak/public_html/laravel/app/controllers/PageController.php on line 21
+[30-Dec-2014 13:30:05 UTC] PHP Parse error:  syntax error, unexpected ',', expecting ')' in /home/yeelee72185perak/public_html/laravel/app/storage/views/9a9713a984f7110adbdb35f6edcf1881 on line 67
+[01-Jan-2015 14:29:06 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: Corebusiness' in /home/yeelee72185perak/public_html/laravel/app/controllers/AdminController.php:144
+Stack trace:
+#0 /home/yeelee72185perak/public_html/laravel/app/controllers/AdminController.php(144): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/yeelee721...', 144, Array)
+#1 [internal function]: AdminController->deleteCorebusiness()
+#2 /home/yeelee72185perak/public_html/laravel/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(231): call_user_func_array(Array, Array)
+#3 /home/yeelee72185perak/public_html/laravel/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('deleteCorebusin...', Array)
+#4 /home/yeelee72185perak/public_html/laravel/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(AdminController), Object(Illuminate\Routing\Route), 'deleteCorebusin in /home/yeelee72185perak/public_html/laravel/app/controllers/AdminController.php on line 144
+[01-Jan-2015 14:29:06 UTC] PHP Fatal error:  Call to a member function delete() on a non-object in /home/yeelee72185perak/public_html/laravel/app/controllers/AdminController.php on line 144
+[03-Jan-2015 13:22:30 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /home/yeelee72185perak/public_html/laravel/app/storage/views/b6c112ba01ef31d608bc94ace9b03706 on line 367
+[03-Jan-2015 13:23:37 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /home/yeelee72185perak/public_html/laravel/app/storage/views/b6c112ba01ef31d608bc94ace9b03706 on line 367
+[03-Jan-2015 13:28:00 UTC] PHP Parse error:  syntax error, unexpected 'form' (T_STRING), expecting ')' in /home/yeelee72185perak/public_html/laravel/app/storage/views/b6c112ba01ef31d608bc94ace9b03706 on line 383
+[03-Jan-2015 16:55:15 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/yeelee72185perak/public_html/laravel/app/storage/views/b6c112ba01ef31d608bc94ace9b03706 on line 35
+[05-Jan-2015 14:43:35 UTC] PHP Fatal error:  Call to undefined method Illuminate\Database\Eloquent\Collection::paginate() in /home/yeelee72185perak/public_html/laravel/app/controllers/AdminController.php on line 35
+[05-Jan-2015 14:43:36 UTC] PHP Fatal error:  Call to undefined method Illuminate\Database\Eloquent\Collection::paginate() in /home/yeelee72185perak/public_html/laravel/app/controllers/AdminController.php on line 35
+[06-Jan-2015 14:41:37 UTC] PHP Fatal error:  Call to undefined function url_encode() in /home/yeelee72185perak/public_html/laravel/app/storage/views/f96930d468e96094968e31c945aca188 on line 168
+[06-Jan-2015 14:41:48 UTC] PHP Fatal error:  Call to undefined function url_encode() in /home/yeelee72185perak/public_html/laravel/app/storage/views/f96930d468e96094968e31c945aca188 on line 168
+[06-Jan-2015 17:35:57 UTC] PHP Parse error:  syntax error, unexpected '!=' (T_IS_NOT_EQUAL), expecting ',' or ')' in /home/yeelee72185perak/public_html/laravel/app/storage/views/6086f2e29457d3c8e67a393e08e73d36 on line 41
+[06-Jan-2015 17:54:18 UTC] PHP Parse error:  syntax error, unexpected ':', expecting '(' in /home/yeelee72185perak/public_html/laravel/app/storage/views/6086f2e29457d3c8e67a393e08e73d36 on line 41
+[06-Jan-2015 17:54:58 UTC] PHP Parse error:  syntax error, unexpected ':', expecting '(' in /home/yeelee72185perak/public_html/laravel/app/storage/views/6086f2e29457d3c8e67a393e08e73d36 on line 41
+[07-Jan-2015 08:52:49 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/yeelee72185perak/public_html/laravel/app/storage/views/5d16c6cc92e1dc686f6477f6ce6fb807 on line 207
+[07-Jan-2015 09:00:30 UTC] PHP Fatal error:  Call to undefined method Illuminate\Database\Eloquent\Collection::paginate() in /home/yeelee72185perak/public_html/laravel/app/controllers/PlantationController.php on line 23
+[07-Jan-2015 12:52:18 UTC] PHP Fatal error:  Class 'Annualreports' not found in /home/yeelee72185perak/public_html/laravel/app/controllers/AnnualreportController.php on line 29
+[07-Jan-2015 13:08:48 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/yeelee72185perak/public_html/laravel/app/controllers/AnnualreportController.php on line 23
+[07-Jan-2015 13:12:19 UTC] PHP Fatal error:  Class 'Annualreports' not found in /home/yeelee72185perak/public_html/laravel/app/controllers/AnnualreportController.php on line 75
+[08-Jan-2015 11:10:15 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/yeelee72185perak/public_html/laravel/app/storage/views/721fbc4eaadd79f631638f366c9cb4af on line 32
+[08-Jan-2015 12:52:20 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/yeelee72185perak/public_html/laravel/app/storage/views/b6c112ba01ef31d608bc94ace9b03706 on line 392
+[08-Jan-2015 12:52:55 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/yeelee72185perak/public_html/laravel/app/storage/views/b6c112ba01ef31d608bc94ace9b03706 on line 392
+[08-Jan-2015 12:53:55 UTC] PHP Parse error:  syntax error, unexpected '"', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/yeelee72185perak/public_html/laravel/app/storage/views/b6c112ba01ef31d608bc94ace9b03706 on line 389
+[11-Jan-2015 10:50:06 UTC] PHP Fatal error:  Method Illuminate\Database\Eloquent\Collection::__toString() must not throw an exception in /home/yeelee72185perak/public_html/laravel/app/controllers/CareerController.php on line 0
+[11-Jan-2015 10:50:57 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: getVacc' in /home/yeelee72185perak/public_html/laravel/app/controllers/CareerController.php:115
+Stack trace:
+#0 /home/yeelee72185perak/public_html/laravel/app/controllers/CareerController.php(115): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/yeelee721...', 115, Array)
+#1 [internal function]: CareerController->frontsearchCareer()
+#2 /home/yeelee72185perak/public_html/laravel/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(231): call_user_func_array(Array, Array)
+#3 /home/yeelee72185perak/public_html/laravel/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('frontsearchCare...', Array)
+#4 /home/yeelee72185perak/public_html/laravel/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(CareerController), Object(Illuminate\Routing\Route), 'frontsearchCare.. in /home/yeelee72185perak/public_html/laravel/app/controllers/CareerController.php on line 115
+[11-Jan-2015 10:50:57 UTC] PHP Fatal error:  Call to a member function orderBy() on a non-object in /home/yeelee72185perak/public_html/laravel/app/controllers/CareerController.php on line 115
+[13-Jan-2015 03:46:17 UTC] PHP Fatal error:  Class 'SHAHashServiceProvider' not found in /home/yeelee72185perak/public_html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php on line 157
+[13-Jan-2015 11:14:58 UTC] PHP Fatal error:  Cannot redeclare Career1Controller::test() in /home/yeelee72185perak/public_html/laravel/app/controllers/Career1Controller.php on line 155
+[13-Jan-2015 12:25:13 UTC] PHP Parse error:  syntax error, unexpected ''method'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/yeelee72185perak/public_html/laravel/app/storage/views/eedfe837bf5a14318365c1db5ad7adcb on line 359
+[13-Jan-2015 13:19:35 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/yeelee72185perak/public_html/laravel/app/storage/views/a58503e1cdd608a357bd97c92ce2e760 on line 22
+[13-Jan-2015 13:20:01 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/yeelee72185perak/public_html/laravel/app/storage/views/a58503e1cdd608a357bd97c92ce2e760 on line 22
+[13-Jan-2015 13:20:24 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/yeelee72185perak/public_html/laravel/app/storage/views/a58503e1cdd608a357bd97c92ce2e760 on line 22
+[13-Jan-2015 13:25:58 UTC] PHP Parse error:  syntax error, unexpected ''";' (T_CONSTANT_ENCAPSED_STRING) in /home/yeelee72185perak/public_html/laravel/app/controllers/PageController.php on line 38
+[13-Jan-2015 13:38:48 UTC] PHP Parse error:  syntax error, unexpected '_blank' (T_STRING) in /home/yeelee72185perak/public_html/laravel/app/controllers/PageController.php on line 36
+[13-Jan-2015 13:39:12 UTC] PHP Parse error:  syntax error, unexpected '_blank' (T_STRING) in /home/yeelee72185perak/public_html/laravel/app/controllers/PageController.php on line 36
+[13-Jan-2015 13:39:46 UTC] PHP Parse error:  syntax error, unexpected '_blank' (T_STRING) in /home/yeelee72185perak/public_html/laravel/app/controllers/PageController.php on line 35
+[14-Jan-2015 04:17:05 UTC] PHP Fatal error:  Class 'session' not found in /home/yeelee72185perak/public_html/laravel/app/storage/views/58c47f1b713ac99fd8b4b83e48bfa68f on line 18
+[14-Jan-2015 06:32:39 UTC] PHP Fatal error:  Class 'feedback' not found in /home/yeelee72185perak/public_html/laravel/app/controllers/ContactController.php on line 99
+[14-Jan-2015 06:33:04 UTC] PHP Fatal error:  Class 'feedback' not found in /home/yeelee72185perak/public_html/laravel/app/controllers/ContactController.php on line 99
+[15-Jan-2015 03:40:58 UTC] PHP Parse error:  syntax error, unexpected ',', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/yeelee72185perak/public_html/laravel/app/storage/views/a7c300e6251814e2e7ea5f37087c7549 on line 592
+[15-Jan-2015 05:33:55 UTC] PHP Fatal error:  Call to undefined method Illuminate\Routing\Redirector::make() in /home/yeelee72185perak/public_html/laravel/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 208
+[15-Jan-2015 15:05:38 UTC] PHP Parse error:  syntax error, unexpected '$id' (T_VARIABLE) in /home/yeelee72185perak/public_html/laravel/app/controllers/TeaplantationController.php on line 232
+[15-Jan-2015 15:31:25 UTC] PHP Fatal error:  Call to a member function delete() on a non-object in /home/yeelee72185perak/public_html/laravel/app/controllers/PageController.php on line 60
+[16-Jan-2015 13:18:34 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/yeelee72185perak/public_html/laravel/app/storage/views/006f38969cedc6c110d260ab938bf787 on line 315
+[16-Jan-2015 13:55:56 UTC] PHP Parse error:  syntax error, unexpected ''Man' (T_ENCAPSED_AND_WHITESPACE) in /home/yeelee72185perak/public_html/laravel/app/routes.php on line 49
+[16-Jan-2015 18:05:08 UTC] PHP Fatal error:  Class 'Corebusinesses' not found in /home/yeelee72185perak/public_html/laravel/app/controllers/AdminController.php on line 314
+[16-Jan-2015 18:07:43 UTC] PHP Fatal error:  Class 'Corebusinesses' not found in /home/yeelee72185perak/public_html/laravel/app/controllers/AdminController.php on line 314

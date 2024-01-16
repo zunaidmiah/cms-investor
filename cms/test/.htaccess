@@ -1,0 +1,21 @@
+
+RewriteEngine on
+# -FrontPage-
+
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+
+<Limit GET POST>
+order deny,allow
+deny from all
+allow from all
+</Limit>
+<Limit PUT DELETE>
+order deny,allow
+deny from all
+</Limit>
+
+Options -Indexes
+RewriteCond %{HTTP_HOST} ^investor\.com\.my$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.investor\.com\.my$
+RewriteRule ^(.*)$ "http\:\/\/cms\.investor\.com\.my\/$1" [R=301,L]
+

@@ -1,0 +1,2 @@
+"id","name","DOB","Email","ContactNumber","MobileNumber","EducationLevel","Address","City","State","PostalCode","Country","CV","JobName","created_at","updated_at","career_vacancy_id"
+"294","Ramarao","22/01/1990","rama@hjk.com","54534343","3434343","DiplomaHigher","ind","hyd","ap","530003","India","Ramarao-sample.docx","Engineer","2016-02-12 08:35:57","2016-02-12 08:35:57","93"

@@ -1,0 +1,277 @@
+@extends('layouts.front_without_banner')
+@section('content')
+        
+        
+        <!-- Slide -->
+           
+            <div class="banner_subpage5"></div>
+            
+            <!-- Info section Title-->
+        
+            <div class="section_title1">
+              <div class="container">
+                <div class="row-fluid animated fadeInUp delay1">
+                  <div class="span5">
+                    <h1>Careers</h1>
+                  </div>
+                  <div class="span7">
+                    <p>Oil Palm Plantation Investment Holdings</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </header>
+        <!-- End Header-->
+        
+         
+            
+            <!-- crumbs-->
+			<div class="crumbs border_bottom">
+            <div class="container">
+              <ul>
+                <li><a href="{{ URL::to('/') }}">Home</a></li>
+                <li>/</li>
+                <li>Careers</li>
+              </ul>
+            </div>        
+  </div>
+        <!-- End crumbs--> 
+        
+        <!-- End content info -->
+        <section class="content_info">
+
+          <!-- Info white-->
+            <div class="info_white1 border_bottom">
+                <div class="container">
+                    <div class="row-fluid">
+                        <div class="span12">
+                             <h2 class="red-title">Job Vacancy</h2>
+							
+                             <p>Far East Holdings Berhad is a public listed company in Bursa Malaysia Securities Berhad's main board. We are an established company deals with Oil Palm Plantation business. Due to expansion, we would like to invite an ambitious and self-motivated individuals to join and grow with our group to make it even stronger. If you fit the below description, we would definitely like to hear from you. Please email us in detail resume or fill our form provided. Find out more on the recruitment process.</p>
+
+
+                               <div id="accordion2" class="accordion">
+                                 @foreach ($job_vacancies_data as $job_vacancy)
+                               
+                                <div class="accordion-group">
+                                    <div class="accordion-heading">
+                                        <a href="#collapse{{$job_vacancy->id }}" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle">
+                                        <i class="icon-chevron-down"></i> <span class="title">{{$job_vacancy->jobtitle}}</span></a>
+                                    </div>
+                                    <div class="accordion-body collapse " id="collapse{{$job_vacancy->id }}">
+                                        <div class="accordion-inner">
+											<div class="ticked">
+                                            <span><strong>Responsibilities</strong></span>
+                                            {{$job_vacancy->responsibilities}}
+											</div>
+
+											<div class="ticked">
+                                            <span><strong>Requirements</strong></span>
+                                            {{$job_vacancy->requirements}}
+											</div>
+                                            <p>{{$job_vacancy->footertext}}</p>
+
+
+                                            <a href="online_apply/{{$job_vacancy->id }}" target="_blank"><input type="submit" name="Submit" value="Apply This Position" class="button"></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                 @endforeach
+                                
+                               
+                              
+
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <i class="icon-briefcase right"></i>
+            </div>
+
+            <!-- End Info white-->
+
+            <!-- Info Resalt-->
+          <div class="info_resalt border_bottom">
+            <div class="container">
+              <h2 class="red-title"><span>How to Apply</span></h2>
+              <div class="row-fluid">
+                <div class="span12">
+            		<p>You may submit your resume to Far East Holdings Berhad by using one of the following methods listed below. Please take note that you only need to submit a resume once. It is the best way to help us make a better and faster connection between you and Far East Holdings Berhad.</p>
+
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+          <!-- End Info Resalt-->
+          
+          
+          <!-- Info white-->
+            <div class="info_white1 border_bottom">
+                <div class="container">
+                    <div class="row-fluid">
+                        <div class="span12">
+                             <h2 class="red-title">Submit On-Line Resume</h2>
+							 <p>We strongly recommend that you submit your resume to Far East Holdings Berhad using the On-line Resume Form. This is the easiest and fastest way to get your resume in front of our Human Resource Division.</p>
+
+                        </div>
+
+                    </div>
+                </div>
+                <i class="icon-globe left"></i>
+             
+            </div><!-- End Info white-->
+            
+            <!-- Info Resalt-->
+          <div class="info_resalt border_bottom">
+            <div class="container">
+              <h2 class="red-title"><span>Submit through E-mail</span></h2>
+              <div class="row-fluid">
+                <div class="span12">
+            		<p>You may also submit your resume by e-mail to <a href="mailto:fareast@fareh.po.my">fareast@fareh.po.my</a>. In order to process your resume quickly, please copy your resume into the body of the e-mail. Avoid special formatting, bold type, underlining, etc. This is to ensure that we are able to scan and capture all your details accurately. </p>
+
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+          <!-- End Info Resalt-->
+          
+          <!-- Info white-->
+            <div class="info_white1 border_bottom">
+                <div class="container">
+                    <div class="row-fluid">
+                        <div class="span12">
+                             <h2 class="red-title">Submit by Fax</h2>
+							 <p>You may fax your resume to our Human Resource Division at 09-513 6211. You may fax your resume in whatever format that is currently available. However, please ensure that you have included all the information that we require to process your application.</p>
+
+                        </div>
+
+                    </div>
+                </div>
+                <i class="icon-print right"></i>
+             
+            </div><!-- End Info white-->
+            
+            
+            <!-- Info Resalt-->
+          <div class="info_resalt border_bottom">
+            <div class="container">
+              <h2 class="red-title"><span>Submit by Snail Mail</span></h2>
+              <div class="row-fluid">
+                <div class="span12">
+            		<p>You can send your resume the traditional way, that is through normal mail at: </p>
+                    <h5>Far East Holdings Berhad. (14809-W)</h5>
+                    Level 23, Menara Zenith, Jalan Putra Square 6, 25200 Kuantan, Pahang Darul Makmur, Malaysia
+                    
+
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+          <!-- End Info Resalt-->
+          
+          <!-- Info white-->
+            <div class="info_white1 border_bottom">
+                <div class="container">
+                    <div class="row-fluid">
+                        <div class="span12">
+                             <h2 class="red-title">What's Next</h2>
+							 <p>Upon receipt of your cover letter and resume, our recruitment unit will enter your information into a database and cross-check profiles with current vacancies. You will be contacted if your profile matches the requirements for a specific job.</p>
+                             <p>If there is a match, you will be contacted for an interview.</p>
+
+                        </div>
+
+                    </div>
+                </div>
+                <i class="icon-user left"></i>
+             
+            </div><!-- End Info white-->
+
+  
+          <!-- Info title-->
+      	  <!--<div class="row-fluid info_title">
+         <br/>
+                <div class="info_vertical">
+                    <h2><span>Our Clients</span></h2>
+                    <p>"We bring a personal and effective approach to every project we work on, which is why our clients love us and why they keep coming back."</p>
+                </div>
+                <br/>
+                <div class="vertical_line"><div class="circle_top"></div></div>
+
+                <i class="icon-group left"></i>
+            </div>-->
+            <!-- End Info title-->
+
+            <!-- clients-->
+            <!--<section class="info_resalt border_top">
+
+              <div class="container">
+               <div class="row-fluid">
+                <div class="sponsors" id="sponsors">
+                    <ul class="slides">
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Digi"><img src="{{ URL::asset('assets/img/logo/digi.png')}}" alt="Digi"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="U Mobile"><img src="{{ URL::asset('assets/img/logo/umobile.png')}}" alt="U Mobile"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Maxis"><img src="{{ URL::asset('assets/img/logo/maxis.png')}}" alt="Maxis"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Celcom"><img src="{{ URL::asset('assets/img/logo/celcom.png')}}" alt="Celcom"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Ericsson"><img src="{{ URL::asset('assets/img/logo/ericsson.png')}}" alt="Ericsson"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="NEC"><img src="{{ URL::asset('assets/img/logo/nec.png')}}" alt="NEC"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Alcatel Lucent"><img src="{{ URL::asset('assets/img/logo/alcatel_lucent.png')}}" alt="Alcatel Lucent"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Huawei"><img src="{{ URL::asset('assets/img/logo/huawei.png')}}" alt="Huawei"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="ZTE"><img src="{{ URL::asset('assets/img/logo/zte.png')}}" alt="ZTE"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="P1"><img src="{{ URL::asset('assets/img/logo/p1.png')}}" alt="P1"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="yes"><img src="{{ URL::asset('assets/img/logo/yes.png')}}" alt="yes"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Nokia"><img src="{{ URL::asset('assets/img/logo/nokia.png')}}" alt="Nokia"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Smart"><img src="{{ URL::asset('assets/img/logo/smart.png')}}" alt="Smart"></a>
+                       </li>
+
+                    </ul>
+                </div>
+              </div>
+             </div>
+            </section>-->
+            <!-- End clients-->
+
+
+
+
+        </section>
+        <!-- End content info-->
+
+        <!-- footer-->
+
+@stop

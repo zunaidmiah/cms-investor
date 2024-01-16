@@ -1,0 +1,6 @@
+[04-Sep-2023 19:27:10 Asia/Singapore] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/investorcom/public_html/bursa/vendor/laravel/framework/src/Illuminate/Support/helpers.php on line 513
+[11-Sep-2023 12:38:45 Asia/Singapore] PHP Fatal error:  Call to a member function update() on array in /home/investorcom/public_html/bursa/app/controllers/StockController.php on line 425
+[11-Sep-2023 12:48:11 Asia/Singapore] PHP Fatal error:  Call to undefined method Illuminate\Database\MySqlConnection::where() in /home/investorcom/public_html/bursa/app/controllers/StockController.php on line 423
+[11-Sep-2023 12:50:40 Asia/Singapore] PHP Fatal error:  Call to a member function update() on array in /home/investorcom/public_html/bursa/app/controllers/StockController.php on line 424
+[11-Sep-2023 12:59:11 Asia/Singapore] PHP Fatal error:  Call to a member function where() on array in /home/investorcom/public_html/bursa/app/controllers/StockController.php on line 424
+[11-Sep-2023 13:08:34 Asia/Singapore] PHP Parse error:  syntax error, unexpected '/' in /home/investorcom/public_html/bursa/app/controllers/StockController.php on line 427

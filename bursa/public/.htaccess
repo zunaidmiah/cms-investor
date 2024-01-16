@@ -1,0 +1,21 @@
+
+RewriteOptions inherit
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+    # Redirect Trailing Slashes...
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+RewriteCond %{HTTP_HOST} ^bursa\.fareastholdingsbhd\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.bursa\.fareastholdingsbhd\.com$
+RewriteRule ^bursa\/public$ "http\:\/\/www\.fareastholdingsbhd\.com\/bursa\/public\/" [R=301,L]
+

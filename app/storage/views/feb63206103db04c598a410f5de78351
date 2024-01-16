@@ -1,0 +1,135 @@
+ <div class="nav_logo animated fadeInDown delay1">            
+                <div class="container">
+                    <div class="row-fluid">
+
+                        <!-- Logo-->
+                        <div class="span3 logo">
+                            <a href="<?php echo URL::to('/'); ?>" title="Back to Home">                            
+                                <img src="<?php echo URL::asset('assets/img/index/logo.png'); ?>" alt="OCK Group Berhad">                            </a>                        </div>
+                        <!-- End Logo-->
+                                                      
+                        <!-- Nav-->
+                        <nav class="span9">
+                            <!-- Menu-->
+                            <ul id="menu" class="sf-menu">
+                                <li><a href="http://cms.ock.net/">HOME</a>                                </li>
+                                <li>
+                                	<a href="#">ABOUT US</a>
+                                	<ul>                                  
+                                        <li><a href="<?php echo URL::to('/profile'); ?>">Corporate Profile</a></li>
+                                        <li><a href="<?php echo URL::to('/mission'); ?>">Vision &amp; Mission</a></li>
+                                        <li><a href="<?php echo URL::to('/board'); ?>">Board of Directors</a></li>
+                                        <li><a href="<?php echo URL::to('/structure'); ?>">Corporate Structure</a></li>
+                                        <li><a href="<?php echo URL::to('/milestone'); ?>">Milestone</a></li>
+                                        <li><a href="<?php echo URL::to('/achievement'); ?>">Achievements</a></li>
+                                        <li><a href="<?php echo URL::to('/boardcharter'); ?>">Board Charter</a></li>
+                                        <li><a href="http://cms.ock.net/pages/news_events">News &amp; Events</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">CORE BUSINESS</a>
+                                	<ul>
+                                        <li><a href="<?php echo URL::to('/telecommunication'); ?>">Telecommunications Network Services</a></li>
+
+                                        <li><a href="<?php echo URL::to('/trading'); ?>">Trading of Telco &amp; IT Products</a></li>
+
+                                        <li><a href="<?php echo URL::to('/greentech'); ?>">Green Technology &amp; Solar</a></li>
+
+                                        <li><a href="<?php echo URL::to('/engineeringworks'); ?>">M&amp;E Engineering Works</a></li>
+
+                                        
+                                    </ul>
+                                </li>
+                                <li><a href="<?php echo URL::to('/clients'); ?>">CLIENTS</a></li>
+                                 <li>
+                                    <a href="http://bursa.ock.net.my/">INVESTOR RELATIONS</a>
+                                    <ul>                                  
+                                        <li><a href="#">Corporate Information</a>
+                                        	<ul>
+                                            	<li><a href="http://bursa.ock.net.my/investorrelations/corporateinformation/general">General</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/corporateinformation/directorprofile">Director's Profile</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/corporateinformation/keymanagemnet">Key Management Team</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/corporateinformation/ourproperties">Our Properties</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/corporateinformation/oursubsidiaries">Our Subsidiaries</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="http://bursa.ock.net.my/investorrelations/corporategovernance">Corporate Governance</a></li>
+                                        <li><a href="#">IPO Centre</a>
+                                        	<ul>
+                                            	<li><a href="http://bursa.ock.net.my/investorrelations/ipocentre/ipostatistics">IPO Statistics</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/ipocentre/competitiveadvantages">Competitive Advantages</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/ipocentre/riskfactors">Risk Factors</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/ipocentre/utilizationproceeds">Utilisation of Proceeds</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/ipocentre/industryoverview">Industry Overview</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Share Information</a>
+                                        	<ul>
+                                            	<li><a href="http://bursa.ock.net.my/investorrelations/shareinformation/priceticker">Price Ticker</a></li>
+                                                <li><a href="http://charts.ock.net.my/">Stock Charts</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/shareinformation/pricevolume">Price &amp; Volume</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/shareinformation/shareholdingsanalysis">Analysis of Shareholdings</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/shareinformation/topshareholders">Top 30 Shareholders</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="http://bursa.ock.net.my/investorrelations/frontentitlement">Entitlements</a></li>
+                                        <li><a href="#">Financial Information</a>
+                                        	<ul>
+                                            	<li><a href="http://bursa.ock.net.my/investorrelations/financialinformation/financialhighlights">Financial Highlights</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/financialinformation/comprehensiveincome">Comprehensive Income</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/financialinformation/financialposition">Financial Position</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/financialinformation/cashflowstatement">Cash Flow Statement</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/financialinformation/equitychanges">Statement of Changes In Equity</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/financialinformation/latestreport">Latest Quarterly Report</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/financialinformation/segmentalanalysis">Segmental Analysis</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/financialinformation/ratioanalysis">Ratio Analysis</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Management Analysis</a>
+                                        	<ul>
+                                            	<li><a href="http://bursa.ock.net.my/investorrelations/managementanalysis/chairmanstatement">Chairman's Statement</a></li>
+
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/managementanalysis/reviewoperations">Review Of Operations</a></li>
+
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/managementanalysis/pastperformance">Past Performance Review</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">News Centre</a>
+                                        	<ul>
+                                            	<li><a href="http://bursa.ock.net.my/investorrelations/newscentre/bursaannouncements">Bursa Announcements</a></li>
+                                                <li><a href="http://medianews.ock.net.my/news_centre_latest_media_news">Media News</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Reports</a>
+                                        	<ul>
+                                            	<li><a href="http://bursa.ock.net.my/investorrelations/reports/annualreports#all">Annual Reports</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/reports/annualauditedaccounts#all">Annual Audited Accounts</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/reports/quarterlyreports">Quarterly Reports</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/reports/circulars">Circulars</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/reports/prospectus">Prospectus</a></li>
+                                                <li><a href="http://bursa.ock.net.my/investorrelations/reports/analystreports">Analyst Reports</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Investor Tools</a>
+                                        	<ul>
+                                            	<li><a href="http://bursa.ock.net.my/investorrelations/investortools/newsalerts">News Alert</a></li>
+                                                <li><a href="http://cms.ock.net/calculator">Price Gain / Loss Calculator</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="http://bursa.ock.net.my/investorrelations/eventcalendar">Event Calendar</a></li>
+                                    </ul>
+                                </li> 
+                                <li><a href="http://cms.ock.net/create_vacency">CAREERS</a></li>                 
+                          		<li><a href="#">CONTACT US</a>
+                                	<ul>
+                                       <li><a href="http://bursa.ock.net.my/contactus">Contact Us</a></li>
+                                       <li><a href="http://bursa.ock.net.my/contactus">Enquiry</a></li>
+                                       <li><a href="http://bursa.ock.net.my/regionaloffices">Regional Offices</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- End Menu-->
+                        </nav>
+                        <!-- End Nav-->
+                    </div>
+                </div>
+          </div>

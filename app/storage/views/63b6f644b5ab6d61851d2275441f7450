@@ -1,0 +1,260 @@
+<?php $__env->startSection('content'); ?>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script>
+$(function() {
+  $( "#date" ).datepicker();
+});
+</script>
+<!-- End content info -->
+
+ <!-- Slide -->
+    <!-- InstanceBeginEditable name="EditRegion1" -->
+
+    <!-- InstanceEndEditable -->
+    <!-- Info section Title-->
+<!-- InstanceBeginEditable name="EditRegion2" -->
+    <div class="section_title1">
+      <div class="container">
+        <div class="row-fluid animated fadeInUp delay1">
+          <div class="span5">
+            <h1>Online Job Application</h1>
+          </div>
+          <div class="span7">
+            <p>Full Turnkey Solutions for Telecom Client.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- InstanceEndEditable -->
+<!-- End Header-->        
+            
+            <!-- crumbs-->
+<div class="crumbs border_bottom">
+            <div class="container"><!-- InstanceBeginEditable name="EditRegion3" -->
+              <ul>
+                <li><a href="<?php echo URL::to('/'); ?>">Home</a></li>
+                <li>/</li>
+                <li><a href="<?php echo URL::to('create_vacancy'); ?>">Careers</a></li>
+                <li>/</li>
+                <li>Online Job Application</li>
+                
+                
+              </ul>
+            <!-- InstanceEndEditable --></div>        
+  </div>
+        <!-- End crumbs--> 
+
+
+
+
+
+<section class="content_info"><!-- InstanceBeginEditable name="EditRegion4" -->
+
+  <!-- Info white-->
+  <div class="info_white1 border_bottom">
+
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+         <h5>Position Applied: <?php echo $job_title->jobtitle; ?></h5>
+         <?php if(Session::has('error_message')): ?>
+         <div class="alert alert-error">
+          <strong>Error!</strong> <?php echo Session::get('error_message'); ?>
+
+        </div>
+        <?php endif; ?>
+        <?php if(Session::has('message')): ?>
+        <div class="alert alert-success">
+          <strong>Thank you!</strong> <?php echo Session::get('message'); ?>
+
+        </div>
+        <?php endif; ?>
+
+
+        </div>
+        <?php echo Form::open(array('url' => 'Add_Application',"class"=>"form-horizontal","files"=>true)); ?>
+
+        <?php echo Form::hidden('vacancy_id',$vacancy_id); ?>
+
+        <div class="span6">
+
+          <h6>Name <span class="red-title">*</span></h6>
+          <?php echo Form::text('Name', Input::old('Name'), array('class' => 'input-xxlarge','placeholder' => 'Your Name' ,'required'=>'')); ?>
+
+          <h6>Date of Birth <span class="red-title">*</span></h6>
+          <?php echo Form::text('DOB', Input::old('DOB'), array('class' => 'input-xxlarge','placeholder' => 'DD/MM/YYYY','id'=>'date' ,'required'=>'' )); ?>
+
+          <h6>E-mail Address <span class="red-title">*</span></h6>
+          <?php echo Form::email('Email', Input::old('Email'), array('class' => 'input-xxlarge','placeholder' => 'E-mail Address' ,'required'=>'' )); ?>
+
+          <h6>Contact Number <span class="red-title">*</span></h6>
+          <?php echo Form::text('Phone', Input::old('Phone'), array('class' => 'input-xxlarge','placeholder' => 'Contact Number' ,'required'=>'' )); ?>
+
+          <h6>Mobile Number <span class="red-title">*</span></h6>
+          <?php echo Form::text('MPhone', Input::old('MPhone'), array('class' => 'input-xxlarge','placeholder' => 'Mobile Number' ,'required'=>'' )); ?>
+
+
+          <div class="clearfix"></div>
+
+          <h6>Education Level <span class="red-title">*</span></h6>
+          <?php echo Form::select("Education_Level", $education_data,array('id'=>'subject') ); ?>
+
+
+          <h6 class="margin_top_10px">Attach Your CV <span class="red-title">*</span></h6>
+          <?php echo Form::file('CV_docs',array('class' => 'button btn-small','required'=>'')  ); ?>
+
+
+          (PDF, RTF, MS Word or JPEG file). Max file size: 2MB
+
+
+
+          <div class="clearfix"></div>
+          <div class="margin_top_10px">
+          <div class="g-recaptcha" data-sitekey="6LdrCQATAAAAAPUzejaqoZQMpwPwl2zb7PulTArY"></div>
+
+
+            <?php echo Form::submit('Submit Your Application', array('class' => 'button')  ); ?>
+
+
+            <br><br><br><br>
+
+          </div>
+          <div id="result"></div>
+        </div>
+
+
+        <div class="span6">
+
+          <h6>Address <span class="red-title">*</span></h6>
+          <?php echo Form::text('Address', Input::old('Address'), array('class' => 'input-xxlarge','placeholder' => 'Address' ,'required'=>'' )); ?>
+
+          <h6>City <span class="red-title">*</span></h6>
+          <?php echo Form::text('City', Input::old('City'), array('class' => 'input-xxlarge','placeholder' => 'City' ,'required'=>'' )); ?>
+
+          <h6>State <span class="red-title">*</span></h6>
+          <?php echo Form::text('State', Input::old('State'), array('class' => 'input-xxlarge','placeholder' => 'State' ,'required'=>'' )); ?>
+
+          <h6>Postal Code <span class="red-title">*</span></h6>
+          <?php echo Form::text('Postal_Code', Input::old('Postal_Code'), array('class' => 'input-xxlarge','placeholder' => 'Postal Code','required'=>'' )); ?>
+
+          <h6>Country <span class="red-title">*</span></h6>
+          <?php echo Form::select("Country", $country_data,array('id'=>'DDLCountry') ); ?>
+
+
+
+
+
+
+
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<!-- End Info white-->
+
+<!-- InstanceEndEditable -->
+<!-- Info title-->
+<div class="row-fluid info_title">
+ <br/>
+ <div class="info_vertical">
+  <h2><span>Our Clients</span></h2>
+  <p>"We bring a personal and effective approach to every project we work on, which is why our clients love us and why they keep coming back."</p>
+</div>
+<br/>
+<div class="vertical_line"><div class="circle_top"></div></div>
+
+<i class="icon-group left"></i>
+</div>
+<!-- End Info title-->
+
+<!-- clients-->
+
+<!-- End clients-->
+
+
+
+
+</section>
+
+<!-- End content info-->
+<!-- End content info -->
+
+
+<!-- clients-->
+<section class="info_resalt border_top">
+
+  <div class="container">
+   <div class="row-fluid">
+    <div class="sponsors" id="sponsors">
+      <ul class="slides">
+       <li>
+        <a href="#"  class="tooltip_hover" title="Digi"><img src="<?php echo URL::asset('assets/img/logo/digi.png'); ?>" alt="Digi"></a>
+      </li>
+      <li>
+        <a href="#"  class="tooltip_hover" title="U Mobile"><img src="<?php echo URL::asset('assets/img/logo/umobile.png'); ?>" alt="U Mobile"></a>
+      </li>
+      <li>
+        <a href="#"  class="tooltip_hover" title="Maxis"><img src="<?php echo URL::asset('assets/img/logo/maxis.png'); ?>" alt="Maxis"></a>
+      </li>
+      <li>
+        <a href="#"  class="tooltip_hover" title="Celcom"><img src="<?php echo URL::asset('assets/img/logo/celcom.png'); ?>" alt="Celcom"></a>
+      </li>
+      <li>
+        <a href="#"  class="tooltip_hover" title="Ericsson"><img src="<?php echo URL::asset('assets/img/logo/ericsson.png'); ?>" alt="Ericsson"></a>
+      </li>
+      <li>
+        <a href="#"  class="tooltip_hover" title="NEC"><img src="<?php echo URL::asset('assets/img/logo/nec.png'); ?>" alt="NEC"></a>
+      </li>
+      <li>
+        <a href="#"  class="tooltip_hover" title="Alcatel Lucent"><img src="<?php echo URL::asset('assets/img/logo/alcatel_lucent.png'); ?>" alt="Alcatel Lucent"></a>
+      </li>
+      <li>
+        <a href="#"  class="tooltip_hover" title="Huawei"><img src="<?php echo URL::asset('assets/img/logo/huawei.png'); ?>" alt="Huawei"></a>
+      </li>
+      <li>
+        <a href="#"  class="tooltip_hover" title="ZTE"><img src="<?php echo URL::asset('assets/img/logo/zte.png'); ?>" alt="ZTE"></a>
+      </li>
+      <li>
+        <a href="#"  class="tooltip_hover" title="P1"><img src="<?php echo URL::asset('assets/img/logo/p1.png'); ?>" alt="P1"></a>
+      </li>
+      <li>
+        <a href="#"  class="tooltip_hover" title="yes"><img src="<?php echo URL::asset('assets/img/logo/yes.png'); ?>" alt="yes"></a>
+      </li>
+      <li>
+        <a href="#"  class="tooltip_hover" title="nsn"><img src="<?php echo URL::asset('assets/img/logo/nsn.png'); ?>" alt="nsn"></a>
+      </li>
+      <li>
+        <a href="#"  class="tooltip_hover" title="Smart"><img src="<?php echo URL::asset('assets/img/logo/smart.png'); ?>" alt="Smart"></a>
+      </li>
+      <li>
+        <a href="#"  class="tooltip_hover" title="Axiata"><img src="<?php echo URL::asset('assets/img/logo/axiata.png'); ?>" alt="Axiata"></a>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+</section>
+<!-- End clients-->
+
+
+
+
+
+<!-- End content info-->
+
+<!-- footer-->
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,8 @@
+vendor/*
+vendors/*
+bootstrap/cache/*
+bootstrap/*
+.log
+.idea/*
+composer.lock
+.vscode/*

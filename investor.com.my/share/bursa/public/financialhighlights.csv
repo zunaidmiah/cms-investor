@@ -1,0 +1,111 @@
+left_block1_content,left_block2_title
+"<table class=""table table-striped"">
+	<colgroup>
+		<col width=""1"" />
+		<col width=""1"" />
+		<col width=""1"" />
+		<col width=""1"" />
+		<col width=""1"" />
+		<col width=""1"" />
+		<col width=""1"" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th colspan=""2""> </th>
+			<th colspan=""2""> </th>
+			<th colspan=""2""> </th>
+			<th> </th>
+		</tr>
+		<tr>
+			<th>FYE</th>
+			<th> </th>
+			<th style=""text-align: right;"">31 Dec 2020</th>
+			<th style=""text-align: right;"">31 Dec 2019</th>
+			<th style=""text-align: right;"">31 Dec 2018</th>
+			<th style=""text-align: right;"">31 Dec 2017</th>
+			<th style=""text-align: right;"">31 Dec 2016 </th>
+		</tr>
+		<tr>
+			<th>No. Of Months</th>
+			<th> </th>
+			<th style=""text-align: right;"">12</th>
+			<th style=""text-align: right;"">12</th>
+			<th style=""text-align: right;"">12</th>
+			<th style=""text-align: right;"">12</th>
+			<th style=""text-align: right;"">12</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Revenue</td>
+			<td style=""text-align: right;""><strong>RM'000</strong></td>
+			<td style=""text-align: right;"">669,049</td>
+			<td style=""text-align: right;"">381,129</td>
+			<td style=""text-align: right;"">379,825</td>
+			<td style=""text-align: right;"">482,733</td>
+			<td style=""text-align: right;"">357,163 </td>
+		</tr>
+		<tr>
+			<td>Profit Before Taxation (PBT)</td>
+			<td style=""text-align: right;""><strong>RM'000</strong></td>
+			<td style=""text-align: right;"">112,205</td>
+			<td style=""text-align: right;"">103,141</td>
+			<td style=""text-align: right;"">72,153</td>
+			<td style=""text-align: right;"">171,647</td>
+			<td style=""text-align: right;"">150,602 </td>
+		</tr>
+		<tr>
+			<td>PBT Margin</td>
+			<td style=""text-align: center;""><strong>%</strong></td>
+			<td style=""text-align: right;"">16.77</td>
+			<td style=""text-align: right;"">27.06</td>
+			<td style=""text-align: right;"">19.00</td>
+			<td style=""text-align: right;"">35.56</td>
+			<td style=""text-align: right;"">42.17 </td>
+		</tr>
+		<tr>
+			<td>Profit After Taxation (PAT)</td>
+			<td style=""text-align: right;""><strong>RM'000</strong></td>
+			<td style=""text-align: right;"">103,150</td>
+			<td style=""text-align: right;"">84,788</td>
+			<td style=""text-align: right;"">56,536</td>
+			<td style=""text-align: right;"">140,190</td>
+			<td style=""text-align: right;"">128,760 </td>
+		</tr>
+		<tr>
+			<td>PAT Margin</td>
+			<td style=""text-align: center;""><strong>%</strong></td>
+			<td style=""text-align: right;"">15.42</td>
+			<td style=""text-align: right;"">22.25</td>
+			<td style=""text-align: right;"">14.88</td>
+			<td style=""text-align: right;"">29.04</td>
+			<td style=""text-align: right;"">36.60</td>
+		</tr>
+		<tr>
+			<td>Profit For The Year Attributable To Owners of the Company</td>
+			<td style=""text-align: right;""><strong>RM'000</strong></td>
+			<td style=""text-align: right;"">97,982</td>
+			<td style=""text-align: right;"">80,017</td>
+			<td style=""text-align: right;"">49,801</td>
+			<td style=""text-align: right;"">114,059</td>
+			<td style=""text-align: right;"">120,889</td>
+		</tr>
+		<tr>
+			<td>Earnings per share attributable to<br />
+			equity holders of the Company (sen)<br />
+			- basic and diluted</td>
+			<td style=""text-align: right;""><strong>sen</strong></td>
+			<td style=""text-align: right;"">16.50</td>
+			<td style=""text-align: right;"">13.47</td>
+			<td style=""text-align: right;"">16.00</td>
+			<td style=""text-align: right;"">80.67</td>
+			<td style=""text-align: right;"">85.50</td>
+		</tr>
+	</tbody>
+</table>
+","<p><em>Notes:</em></p>
+
+<ul class=""unstyled"">
+	<li class=""blue-title""><em># Basic earnings per share of the Group are calculated by dividing the net profit for the financial year by the weighted average number of ordinary shares in issue during the financial year.</em></li>
+</ul>
+"

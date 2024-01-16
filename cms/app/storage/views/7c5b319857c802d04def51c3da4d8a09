@@ -1,0 +1,189 @@
+<?php $__env->startSection('content'); ?> 
+
+ 
+            <div class="section_title1">
+              <div class="container">
+                <div class="row-fluid animated fadeInUp delay1">
+                  <div class="span6">
+                    <h1>Company Bulletin, CSR &amp; Training</h1>
+                  </div>
+                  <div class="span6">
+                    <p>Oil Palm Plantation Investment Holdings</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+        
+         
+            
+            <!-- crumbs-->
+			<div class="crumbs border_bottom">
+            <div class="container">
+              <ul>
+                <li><a href="<?php echo URL::to('/'); ?>">Home</a></li>
+                <li>/</li>
+                <li>Company</li>
+                <li>/</li>
+                <li>Company Bulletin, CSR &amp; Training</li>
+              </ul>
+            </div>        
+  </div>
+        <!-- End crumbs-->   
+        
+ 
+        
+        
+
+        <!-- End content info -->
+        <section class="content_info">
+          
+          <!-- Info white-->
+          <div class="info_white1 border_bottom">
+            <div class="container"> 
+
+              <div class="row-fluid">
+                <div class="span12">
+                    <div class="portfolio filters">
+
+                        <ul class="filter" id="portfolio-filter">
+                            <li><a href="#all" >All</a></li>
+                            <?php foreach($group_cat as $data): ?>
+                             <?php if($data->category == 'CompanyBulletin'): ?>
+                               <li><a href="#<?php echo $data->category; ?>">Company Bulletin</a></li>
+                             <?php else: ?>
+                               <li><a href="#<?php echo $data->category; ?>"><?php echo $data->category; ?></a></li>
+                             <?php endif; ?>
+                            
+
+                            <?php endforeach; ?>
+                        </ul>
+
+                    	<ul class="filter" id="portfolio-filter">
+                            <li><a href="#all" >All</a></li>
+                            <?php foreach($group_year as $data): ?>
+
+                            <li><a href="#<?php echo $data->year; ?>"><?php echo $data->year; ?></a></li>
+                            
+
+                            <?php endforeach; ?>
+                        </ul>
+
+                       <ul id="portfolio-list">
+                        
+                            <!-- Item Portfolio-->
+                          
+                            <?php foreach($group_title as $data): ?>
+                            
+                            <li class="span4 <?php echo $data->category; ?> <?php echo $data->year; ?>" style= "height:330px">                            
+                                <div class="hover">
+                                    <img src="<?php echo asset('uploads/newsevent/'.$data->file); ?>" alt="<?php echo $data->title; ?>" style="height: 225px"/>                               
+                                    <a href="<?php echo URL::to('event_photo_view/'.$data->id); ?>" target="_blank"><div class="overlay"></div></a>
+                                </div> 
+                                                                   
+                                <div class="info">
+                                    <a href="<?php echo URL::to('event_photo_view/'.$data->id); ?>" target="_blank"><?php echo $data->title; ?></a>
+ 
+                                </div>  
+                            </li> 
+                            
+                            <?php endforeach; ?> 
+                           
+                            <!-- End Item Portfolio-->
+
+                                                      
+                            <!-- End Item Portfolio-->                      
+
+                             
+
+                        </ul>
+                    </div>
+					
+                </div>
+                   
+              </div>
+            </div>
+            <i class="icon-picture right"></i>
+          </div>
+          <!-- End Info white -->
+          
+
+          <!-- Info title-->
+      	  <!--<div class="row-fluid info_title">
+ 				<br/>
+                <div class="info_vertical">
+                    <h2><span>Our Clients</span></h2>
+                    <p>"We bring a personal and effective approach to every project we work on, which is why our clients love us and why they keep coming back."</p>
+                </div>
+                <br/>
+                <div class="vertical_line"><div class="circle_top"></div></div>
+
+                <i class="icon-group left"></i>
+            </div>-->
+            <!-- End Info title-->
+           
+            <!-- clients-->
+            <!--<section class="info_resalt border_top">
+            	
+              <div class="container">
+               <div class="row-fluid">  
+                <div class="sponsors" id="sponsors">                
+                    <ul class="slides">
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Digi"><img src="<?php echo URL::asset('assets/img/logo/digi.png'); ?>" alt="Digi"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="U Mobile"><img src="<?php echo URL::asset('assets/img/logo/umobile.png'); ?>" alt="U Mobile"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Maxis"><img src="<?php echo URL::asset('assets/img/logo/maxis.png'); ?>" alt="Maxis"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Celcom"><img src="<?php echo URL::asset('assets/img/logo/celcom.png'); ?>" alt="Celcom"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Ericsson"><img src="<?php echo URL::asset('assets/img/logo/ericsson.png'); ?>" alt="Ericsson"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="NEC"><img src="<?php echo URL::asset('assets/img/logo/nec.png'); ?>" alt="NEC"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Alcatel Lucent"><img src="<?php echo URL::asset('assets/img/logo/alcatel_lucent.png'); ?>" alt="Alcatel Lucent"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Huawei"><img src="<?php echo URL::asset('assets/img/logo/huawei.png'); ?>" alt="Huawei"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="ZTE"><img src="<?php echo URL::asset('assets/img/logo/zte.png'); ?>" alt="ZTE"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="P1"><img src="<?php echo URL::asset('assets/img/logo/p1.png'); ?>" alt="P1"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="yes"><img src="<?php echo URL::asset('assets/img/logo/yes.png'); ?>" alt="yes"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Nokia"><img src="<?php echo URL::asset('assets/img/logo/nokia.png'); ?>" alt="Nokia"></a>
+                       </li>
+                       <li>
+                          <a href="#"  class="tooltip_hover" title="Smart"><img src="<?php echo URL::asset('assets/img/logo/smart.png'); ?>" alt="Smart"></a>
+                       </li>
+                                     
+                    </ul> 
+                </div>
+              </div>  
+             </div>  
+            </section>  -->
+            <!-- End clients--> 
+
+
+           
+
+        </section>
+        <!-- End content info-->
+
+
+
+<?php $__env->stopSection(); ?>
+        
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

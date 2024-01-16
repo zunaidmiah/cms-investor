@@ -1,0 +1,2 @@
+"id","name","DOB","Email","ContactNumber","MobileNumber","EducationLevel","Address","City","State","PostalCode","Country","CV","JobName","created_at","updated_at","career_vacancy_id"
+"203","Jaya Test","25/04/1985","jaya@test.com","0123456789","0123456789","ProfessionalDegree","KT","Brick","KL","580005","Malaysia","Jaya Test-SampleResume1.doc","Engineer","2015-12-01 04:10:42","2015-12-01 04:10:42","93"

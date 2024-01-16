@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<?php echo $__env->make('includes.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<style>
+	 <?php if(Request::segment(1)!=''): ?>
+        .banner_subpage5 {
+
+                background-image: url(http://ock.app:8000/uploads/banners/<?php echo $banner; ?>);
+                background-repeat: no-repeat;
+                background-position: center top;
+                height: 400px;
+                width: 100%;
+            
+        }
+        <?php endif; ?>
+        </style>
+</head>
+<body>
+<header class="slide1">            
+            <!-- nav_logo-->
+           <?php echo $__env->make('includes.top_nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <!-- End nav_logo-->
+            <!--<div class="camera_wrap" id="slide">
+                
+            </div>-->
+               
+        </header>
+
+<?php echo $__env->yieldContent('content'); ?>
+<?php echo $__env->make('includes.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>	
+
+</body>
+</html>

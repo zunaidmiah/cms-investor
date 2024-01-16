@@ -1,0 +1,120 @@
+<?php $__env->startSection('content'); ?> 
+<div class="section_title1">
+              <div class="container">
+                <div class="row-fluid animated fadeInUp delay1">
+                  <div class="span5">
+                    <h1>Board of Directors</h1>
+                  </div>
+                  <div class="span7">
+                    <p>Full Turnkey Solutions for Telecom Client.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- crumbs-->
+<div class="crumbs border_bottom">
+            <div class="container"><!-- InstanceBeginEditable name="EditRegion3" -->
+              <ul>
+                <li><a href="http://cms.ock.net.my">Home</a></li>
+                <li>/</li>
+                <li>About Us</li>
+                <li>/</li>
+                <li>Board of Directors</li>
+              </ul>
+            <!-- InstanceEndEditable --></div>        
+  </div>
+        <!-- End crumbs-->   
+        
+ 
+        
+        
+
+        <!-- End content info -->
+        <section class="content_info"><!-- InstanceBeginEditable name="EditRegion4" -->
+
+<?php $i=1; ?>
+        <?php foreach($bods as $bod): ?>
+
+        <?php if(($i % 2) == 1): ?>
+         <!-- Info white-->
+            <div class="info_white border_bottom">
+                <div class="container">
+                    <div class="row-fluid">
+                        <div class="span9">
+                             <?php echo $bod->bod_name; ?>
+
+
+                             <?php echo $bod->bod_position; ?>
+
+
+                             <?php echo $bod->country_age; ?>
+
+
+                             <?php echo $bod->bod_description; ?>
+
+                             
+   
+                        </div>
+                        
+                        <!-- Image animation-->
+                        <div class="span3 image_resalt">
+                           <div class="animation_four border_bottom">
+                              	<img src="http://cms.ock.net.my/uploads/bods/<?php echo $bod->bod_image; ?>" alt="Dato' Syed Norulzama bin Syed Kamarulzaman">
+                           </div>
+                        </div>
+                        <!-- End Image animation-->
+
+                    </div>
+                </div>
+            </div>
+
+            <?php elseif(($i % 2) == 0): ?>
+            
+            <!-- End Info white-->
+            
+            <!-- Info white-->
+            <div class="info_resalt border_bottom">
+                <div class="container">
+                    <div class="row-fluid"> 
+                    	<!-- Image animation-->
+                        <div class="span3 image_resalt">
+                           <div class="animation_three border_bottom">
+                              	<img src="http://cms.ock.net.my/uploads/bods/<?php echo $bod->bod_image; ?>" alt="Abdul Halim Bin Abdul Hamid">
+                           </div>
+                        </div>
+                        <!-- End Image animation-->
+                        
+                        <div class="span9">
+                             <?php echo $bod->bod_name; ?>
+
+
+                             <?php echo $bod->bod_position; ?>
+
+
+                             <?php echo $bod->country_age; ?>
+
+
+                             <?php echo $bod->bod_description; ?>             
+                        </div>
+                    </div>
+                </div>
+                          
+              </div>
+			<!-- End Info white-->
+            
+           <?php endif; ?>
+            
+         
+
+
+<?php $i++; ?>
+        <?php endforeach; ?>              
+
+        </section>
+        <!-- End content info-->
+
+       
+        
+<?php $__env->stopSection(); ?>
+        
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

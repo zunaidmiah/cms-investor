@@ -1,0 +1,106 @@
+/* liScroll styles */
+
+.tickercontainer {
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f7f5f2;
+}
+.tickercontainer .mask {
+    position: relative;
+    left: 15px;
+    right: 15px;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 30px;
+}
+ul.newsticker 
+{
+	/* that's your list */
+	position: relative;
+	left: 0px;
+	font-family: 'Open Sans', sans-serif !important;
+	font-size: 15px;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	/*top: 5px;*/
+	font-weight: 400;
+}
+.info_vertical ul.newsticker li 
+{
+	float: left;
+	padding: 0;
+	color: #403e3d;
+	margin-top: 0;
+	margin-right: 15px;
+	margin-bottom: 0;
+	margin-left: 0;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+ul.newsticker a 
+{
+	white-space: nowrap;
+	padding: 0;
+	color: #f8f8f8;
+	font-family: 'Open Sans', sans-serif !important;
+	font-size: 12px;
+	margin: 0;
+	text-decoration: none;
+	font-weight: 400;
+} 
+ul.newsticker a:hover
+{
+  text-decoration:underline;
+}
+ul.newsticker span 
+{
+  margin: 0;
+} 
+.info_vertical .stock_number_up
+{ 
+  font-size: 16px; 
+  color: #468847; 
+}
+.info_vertical .stock_number_down
+{ 
+  font-size: 16px; 
+  color: #cc0000; 
+}
+.info_vertical .stock_number_standard
+{ 
+  font-size: 16px; 
+  /*color: #3a87ad;*/
+  color: #40C1FF; 
+}
+
+ul.newsticker *
+{
+}
+.linkPriceMargin
+{
+  margin:1px 0px 0px 0px !important;
+  vertical-align:top !important;
+}
+.linkPriceMargin span
+{
+  vertical-align:top !important;
+  display:block;
+}
+.linkPriceMargin a
+{
+  vertical-align:top !important;
+}
+.divGap
+{
+  width:80px !important;
+  margin:0px;
+  padding:8px 0 0 0;
+}
+.normal {
+	font-weight: 400;
+}

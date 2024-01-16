@@ -1,0 +1,664 @@
+<?php $__env->startSection('content'); ?>
+
+<!--BEGIN PAGE WRAPPER-->
+      <div id="page-wrapper"><!--BEGIN PAGE HEADER & BREADCRUMB-->
+        
+        <div class="page-header-breadcrumb">
+          <div class="page-heading hidden-xs">
+            <h1 class="page-title">Banners</h1>
+          </div>
+          <ol class="breadcrumb page-breadcrumb">
+            <li><i class="fa fa-home"></i>&nbsp;<a href="<?php echo url('dashboard'); ?>">Dashboard</a>&nbsp; <i class="fa fa-angle-right"></i>&nbsp;</li>
+            <li>Banners &nbsp;<i class="fa fa-angle-right"></i>&nbsp;</li>
+            <li class="active">Sub Page Banners - Listing</li>
+          </ol>
+        </div>
+        <!--END PAGE HEADER & BREADCRUMB--><!--BEGIN CONTENT-->
+        
+        <div class="page-content">
+          <div class="row">
+            <div class="col-lg-12">
+              <h2>Sub Page Banners <i class="fa fa-angle-right"></i> Listing</h2>
+              <div class="clearfix"></div>
+              <?php if(Session::has('message')): ?>
+              <div class="alert alert-success alert-dismissable">
+                <button type="button" data-dismiss="alert" aria-hidden="true" class="close">&times;</button>
+                <i class="fa fa-check-circle"></i> <strong>Success!</strong>
+                <p><?php echo Session::get('message'); ?></p>
+              </div>
+              <?php endif; ?>
+              <?php if(Session::has('error_message')): ?>
+              <div class="alert alert-danger alert-dismissable">
+                <button type="button" data-dismiss="alert" aria-hidden="true" class="close">&times;</button>
+                <i class="fa fa-times-circle"></i> <strong>Error!</strong>
+                <p><?php echo Session::get('error_message'); ?></p>
+              </div>
+              <?php endif; ?>
+              
+              <div class="pull-left"> Last updated: <span class="text-blue">15 Sept, 2014 @ 12.00PM</span> </div>
+              <div class="clearfix"></div>
+              <p></p>
+              
+              
+              
+              <!-- End portlet-->
+              
+              <div class="portlet">
+                <div class="portlet-header">
+                  <div class="caption">Sub Page Banners Listing</div>
+                  <br/>
+                  <p class="margin-top-10px"></p>
+                  <a href="#" data-target="#modal-add-montage" data-toggle="modal" class="btn btn-success">Add New &nbsp;<i class="fa fa-plus"></i></a>&nbsp;
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Delete</button>
+                    <button type="button" data-toggle="dropdown" class="btn btn-red dropdown-toggle"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
+                    <ul role="menu" class="dropdown-menu">
+                      <li><a href="#" data-target="#modal-delete-selectednot" data-toggle="modal" class="deleteid" rel="<?php echo url();; ?>/banners/deleteselected" rev="modal-delete-selected">Delete selected item(s)</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#" data-target="#modal-delete-all" data-toggle="modal">Delete all</a></li>
+                    </ul>
+                  </div>
+                   
+          <div class="tools"> 
+                    <i class="fa fa-chevron-up"></i> 
+                  </div>
+                  <!--Modal Add New Montage start-->
+                  <div id="modal-add-montage" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true" class="modal fade">
+                    <div class="modal-dialog modal-wide-width">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+                          <h4 id="modal-login-label2" class="modal-title">Add New Banner</h4>
+                        </div>
+                        <div class="modal-body">
+                        
+                          <div class="form">
+                            <?php echo Form::open(array('name'=>'montages_add_form','id'=>'montages_add_form','url' => 'banners',"method" => "post","files"=>true,"class"=>"form-horizontal")); ?>
+
+                             
+                              <div class="form-group">
+                                <label class="col-md-3 control-label">Status</label>
+                                <div class="col-md-6">
+                                  <div data-on="success" data-off="primary" class="make-switch">
+                                    <?php echo Form::checkbox('status', '1',true);; ?>
+
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-md-3 control-label">Title </label>
+                                <div class="col-md-6">
+                                  
+                                   <?php echo Form::text('title', Input::old('title'), array('class' => 'form-control validate[required]','placeholder' => 'Title')); ?>
+
+                                </div>
+                               
+                              </div>
+                              
+                              <div class="form-group">
+                                <label class="col-md-3 control-label">Upload Banner Image <span class='require'>*</span></label>
+                                <div class="col-md-9">
+                                  <div class="text-15px margin-top-10px">
+                                    <?php echo Form::file('Banner_image', ['class' => 'validate[required]']);; ?>
+
+                                    <br/>
+                                    <span class="help-block">(Image dimension: 1700 (min.) x 400 pixels, JPEG/GIF/PNG only, Max. 1MB) </span> </div>
+                                </div>
+                              </div>
+                               <div class="form-group">
+                                  <label for="inputFirstName" class="col-md-3 control-label">Apply to Pages <span class='require'>*</span></label>
+                                  <div class="col-md-6">
+                                  
+                                    <select name="pages[]" multiple="multiple" class="form-control" style="height: 350px;">
+                                    <optgroup label="cms.ock.net.my">
+                                      <option value="">-About Us</option>
+                                        <option value="1">&nbsp; --Corporate Profile</option>
+                                        <option value="2">&nbsp; --Vision &amp; Mission</option> 
+                                        <option value="3">&nbsp; --Board of Directors</option>
+                                        <option value="4">&nbsp; --Corporate Structure</option>
+                                        <option value="5">&nbsp; --Milestone</option>
+                                        <option value="6">&nbsp; --Achievements</option>
+                                        <option value="7">&nbsp; --Board Charter</option>
+                                        <option value="8">&nbsp; --News &amp; Events</option> 
+
+                                        <option value="">-CORE BUSINESS</option>
+                                        <option value="9">&nbsp; --Telecommunications Network Services</option> 
+                                        <option value="10">&nbsp; --Trading of Telco &amp; IT Products</option> 
+                                        <option value="11">&nbsp; --Green Technology &amp; Solar</option> 
+                                        <option value="12">&nbsp; --M&amp;E Engineering Works</option> 
+
+                                        <option value="13">-CLIENTS</option>
+                                        <option value="14">-CAREERS</option>
+
+                                        <option value="">-Investor Tools</option>
+                                        <option value="15">&nbsp; --Price Gain / Loss Calculator</option>
+
+                                        
+                                    </optgroup>
+                                    <optgroup label="charts.ock.net.my">
+
+                                        <option value="17">-Home</option>
+
+                                    </optgroup>
+
+                                    <optgroup label="medianews.ock.net.my">
+
+                                        <option value="18">-news_centre_latest_media_news</option>
+                                        <option value="19">-news_centre_latest_media_news_details</option>
+
+                                    </optgroup>
+
+                                    <optgroup label="bursa.ock.net.my">
+                                        <option value="62">-Home</option>
+                                        <option value="">-Corporate Information</option>
+                                        <option value="20">&nbsp; --General</option>
+                                        <option value="21">&nbsp; --Director's Profile</option>
+                                        <option value="22">&nbsp; --Key Management Team</option>
+                                        <option value="23">&nbsp; --Our Properties</option>
+                                        <option value="24">&nbsp; --Our Subsidiaries</option>
+                                        <option value="26">-Corporate Governance</option>
+                                        <option value="">-IPO Centre</option>
+                                        <option value="27">&nbsp; --IPO Statistics</option>
+                                        <option value="28">&nbsp; --Competitive Advantages</option>
+                                        <option value="29">&nbsp; --Risk Factors</option>
+                                        <option value="30">&nbsp; --Utilisation of Proceeds</option>
+                                        <option value="31">&nbsp; --Industry Overview</option>
+                                        <option value="">-Share Information</option>
+                                        <option value="32">&nbsp; --Price Ticker</option>
+                                        <option value="33">&nbsp; --Stock Charts</option>
+                                        <option value="34">&nbsp; --Price &amp; Volume</option>
+                                        <option value="35">&nbsp; --Analysis of Shareholdings</option>
+                                        <option value="36">&nbsp; --Top 30 Shareholders</option>
+                                        <option value="37">-Entitlements</option>
+                                        <option value="">-Financial Information</option>
+                                        <option value="38">&nbsp; --Financial Highlights</option>
+                                        <option value="39">&nbsp; --Comprehensive Income</option>
+                                        <option value="40">&nbsp; --Financial Position</option>
+                                        <option value="41">&nbsp; --Cash Flow Statement</option>
+                                        <option value="42">&nbsp; --Statement of Changes In Equity</option>
+                                        <option value="43">&nbsp; --Latest Quarterly Report</option>
+                                        <option value="44">&nbsp; --Segmental Analysis</option>
+                                        <option value="45">&nbsp; --Ratio Analysis</option>
+                                        <option value="">-Management Analysis</option>
+                                        <option value="46">&nbsp; --Chairman's Statement</option>
+                                        <option value="47">&nbsp; --Review Of Operations</option>
+                                        <option value="48">&nbsp; --Past Performance Review</option>
+
+                                        <option value="">-News Centre</option>
+                                        <option value="49">&nbsp; --Bursa Announcements</option>
+                                        <option value="50">&nbsp; --Bursa Announcements details</option>
+
+
+                                        <option value="">-Reports</option>
+                                        <option value="51">&nbsp; --Annual Reports</option>
+                                        <option value="52">&nbsp; --Annual Audited Accounts</option>
+                                        <option value="53">&nbsp; --Quarterly Reports</option>
+                                        <option value="54">&nbsp; --Circulars</option>
+                                        <option value="55">&nbsp; --Prospectus</option>
+                                        <option value="56">&nbsp; --Analyst Reports</option>
+
+                                        <option value="">-Investor Tools</option>
+                                        <option value="57">&nbsp; --News Alert</option>
+
+                                        <option value="58">-Event Calendar</option>
+
+                                        <option value="">-CONTACT US</option>
+                                        <option value="59">&nbsp; --Contact Us</option>
+                                        <option value="60">&nbsp; --Enquiry</option>
+                                        <option value="61">&nbsp; --Regional Offices</option>
+
+                                    </optgroup>
+
+
+                                        
+
+                                     </select>
+                                    
+                                   </div>
+                                 </div>
+                              
+                              
+                              <div class="form-actions">
+                                <div class="col-md-offset-5 col-md-8"> 
+
+                                
+                                <?php echo Form::button(
+                                                'Save &nbsp;<i class="fa fa-floppy-o"></i>&nbsp;',
+                                                array(
+                                                    'class'=>'btn btn-red',
+                                                    'type'=>'submit')); ?>
+
+
+
+                                &nbsp; <a href="#" data-dismiss="modal" class="btn btn-green">Cancel &nbsp;<i class="glyphicon glyphicon-ban-circle"></i></a> </div>
+                              </div>
+                             <?php echo Form::close(); ?>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--END MODAL Add New Montage-->
+
+
+                  <!--Modal delete selected items start-->
+                  <div id="modal-delete-selected" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+                          <h4 id="modal-login-label3" class="modal-title"><a href=""><i class="fa fa-exclamation-triangle"></i></a> Are you sure you want to delete the selected item(s)? </h4>
+                        </div>
+                        <div class="modal-body">
+                         
+                          <div class="form-actions">
+                            <div class="col-md-offset-4 col-md-8"> <a href="#"  class="btn btn-red">Yes &nbsp;<i class="fa fa-check"></i></a>&nbsp; <a href="#" data-dismiss="modal" class="btn btn-green">No &nbsp;<i class="fa fa-times-circle"></i></a> </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- modal delete selected items end -->
+                  <!--Modal delete all items start-->
+                  <div id="modal-delete-all" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+                          <h4 id="modal-login-label3" class="modal-title"><a href=""><i class="fa fa-exclamation-triangle"></i></a> Are you sure you want to delete all items? </h4>
+                        </div>
+                        <div class="modal-body">
+                          <div class="form-actions">
+
+                          <?php echo Form::open(array('url' => 'banners/deleteall', 'method' => 'post', 'name' => 'deleteallsementra', 'id' => 'deleteallsementra', 'class' => 'form-horizontal','files' => true)); ?>
+
+
+                            <div class="col-md-offset-4 col-md-8"> 
+
+
+                           
+
+                            <?php echo Form::button(
+                                                'Yes &nbsp;<i class="fa fa-check"></i>',
+                                                array(
+                                                    'class'=>'btn btn-red',
+                                                    'type'=>'submit')); ?>
+
+
+
+
+                            <a href="#" data-dismiss="modal" class="btn btn-green">No &nbsp;<i class="fa fa-times-circle"></i></a> </div>
+                             <?php echo Form::close(); ?> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- modal delete all items end -->
+                </div>
+                <div class="portlet-body">
+                  <div class="form-inline pull-left">
+                    <div class="form-group">
+                        <?php if($cntarray1 != 0 ): ?>
+                   
+                    <?php echo Form::open(array('url' => Request::url(),'class'=> 'form-horizontal','method' => 'get')); ?>
+
+  <?php echo Form::select('noperpage1', $cntarray1, Input::get('noperpage1'),array('class' => 'form-control','onchange' => 'this.form.submit();')); ?>
+
+   <?php echo Form::close(); ?>
+
+         
+        
+                      &nbsp;
+                      <label class="control-label">Records per page</label>
+                       <?php endif; ?>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                  <br/>
+                  <br/>
+                  <table class="table table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th width="1%"><input type="checkbox" class="wholecheck"/></th>
+                        <th>#</th>
+                        <th>Status</th>
+                        <th>Title</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php $k=1;?>
+                    
+                    <?php foreach($banners as $ban): ?>
+                      <tr>
+                        
+                        <td><input type="checkbox" class="chkNumber" name="del[]" value="<?php echo $ban->id; ?>"/></td>
+                        <td><?php echo $k; ?></td>
+                        <td><span class="label label-sm <?php if($ban->status == 1): ?> label-success <?php else: ?> label-danger <?php endif; ?>"><?php if($ban->status == 1): ?> Active <?php else: ?> Inactive <?php endif; ?></span></td>
+                        <td><?php echo $ban->title; ?></td>
+                        <td><a href="#" data-hover="tooltip" data-placement="top" data-target="#modal-edit-montage-<?php echo $ban->id; ?>" data-toggle="modal" title="Edit"><span class="label label-sm label-success"><i class="fa fa-pencil"></i></span></a> <a href="#" data-hover="tooltip" data-placement="top" title="Delete" data-target="#modal-delete-<?php echo $ban->id; ?>" data-toggle="modal"><span class="label label-sm label-red"><i class="fa fa-trash-o"></i></span></a>
+                          <!--Modal Edit Montage start-->
+
+                          
+                          <div id="modal-edit-montage-<?php echo $ban->id; ?>" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true" class="modal fade">
+                            <div class="modal-dialog modal-wide-width">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+                                  <h4 id="modal-login-label2" class="modal-title">Edit Banner Image</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <div class="form">
+                                    <?php echo Form::open(array('url' => 'banners/upd', 'method' => 'post', 'class' => 'form-horizontal','files' => true)); ?> 
+                                      <div class="form-group">
+                                        <label class="col-md-3 control-label">Status</label>
+                                        <div class="col-md-6">
+                                          <div data-on="success" data-off="primary" class="make-switch">
+                                           <?php echo Form::hidden('status',0); ?>
+
+              <?php echo Form::checkbox('status',1,$ban->status,array('id'=>'status','class' => 'form-control')); ?>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label class="col-md-3 control-label">Title </label>
+                                        <div class="col-md-6">
+                                         
+                                          <?php echo Form::text('title', $ban->title ,array('id'=>'title','class' => 'form-control')); ?>
+
+                                        </div>
+                                      </div>
+                                      
+                                      <div class="form-group">
+                                        <label class="col-md-3 control-label">Upload Banner Image <span class='require'>*</span></label>
+                                        <div class="col-md-9">
+                                          <div class="text-15px margin-top-10px">
+                                            <img src="<?php echo url().'/uploads/banners/'.$ban->banner; ?>" alt="" class="img-responsive"><br/>
+
+                                            
+
+
+                                            <input id="exampleInputFile1" type="file"/>
+                                            <br/>
+                                            <span class="help-block">(Image dimension: 1700 (min.) x 400 pixels, JPEG/GIF/PNG only, Max. 1MB) </span> </div>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="inputFirstName" class="col-md-3 control-label">Apply to Pages <span class='require'>*</span></label>
+                                          <div class="col-md-6">
+                                          note to programmer: this is the multiple selection. Admin can select multiple sub pages to apply this banner into it.
+
+<?php  
+
+$pages = DB::table('page_banner')->where('banner_id', $ban->id)->get();
+$pageArray=[];
+foreach($pages as $page)
+{
+  $pageArray[]=$page->page_id;
+}
+//var_dump($pageArray);
+
+
+
+
+ ?>
+
+                                           <select name="pages[]" multiple="multiple" class="form-control" style="height: 350px;">
+
+
+
+                                        <optgroup label="cms.ock.net.my">
+                                      <option value="">-About Us</option>
+                                        <option <?php echo in_array(1,$pageArray)?'selected':''; ?> value="1">&nbsp; --Corporate Profile</option>
+                                        <option <?php echo in_array(2,$pageArray)?'selected':''; ?> value="2">&nbsp; --Vision &amp; Mission</option> 
+                                        <option <?php echo in_array(3,$pageArray)?'selected':''; ?> value="3">&nbsp; --Board of Directors</option>
+                                        <option <?php echo in_array(4,$pageArray)?'selected':''; ?> value="4">&nbsp; --Corporate Structure</option>
+                                        <option <?php echo in_array(5,$pageArray)?'selected':''; ?> value="5">&nbsp; --Milestone</option>
+                                        <option <?php echo in_array(6,$pageArray)?'selected':''; ?> value="6">&nbsp; --Achievements</option>
+                                        <option <?php echo in_array(7,$pageArray)?'selected':''; ?> value="7">&nbsp; --Board Charter</option>
+                                        <option <?php echo in_array(8,$pageArray)?'selected':''; ?> value="8">&nbsp; --News &amp; Events</option> 
+
+                                        <option value="">-CORE BUSINESS</option>
+                                        <option <?php echo in_array(9,$pageArray)?'selected':''; ?> value="9">&nbsp; --Telecommunications Network Services</option> 
+                                        <option <?php echo in_array(10,$pageArray)?'selected':''; ?> value="10">&nbsp; --Trading of Telco &amp; IT Products</option> 
+                                        <option <?php echo in_array(11,$pageArray)?'selected':''; ?> value="11">&nbsp; --Green Technology &amp; Solar</option> 
+                                        <option <?php echo in_array(12,$pageArray)?'selected':''; ?> value="12">&nbsp; --M&amp;E Engineering Works</option> 
+
+                                        <option <?php echo in_array(13,$pageArray)?'selected':''; ?> value="13">-CLIENTS</option>
+                                        <option <?php echo in_array(14,$pageArray)?'selected':''; ?> value="14">-CAREERS</option>
+
+                                        <option  value="">-Investor Tools</option>
+                                        <option <?php echo in_array(15,$pageArray)?'selected':''; ?> value="15">&nbsp; --Price Gain / Loss Calculator</option>
+
+                                        
+                                    </optgroup>
+                                    <optgroup label="charts.ock.net.my">
+
+                                        <option <?php echo in_array(17,$pageArray)?'selected':''; ?> value="17">-Home</option>
+
+                                    </optgroup>
+
+                                    <optgroup label="medianews.ock.net.my">
+
+                                        <option <?php echo in_array(18,$pageArray)?'selected':''; ?> value="18">-news_centre_latest_media_news</option>
+                                        <option <?php echo in_array(19,$pageArray)?'selected':''; ?> value="19">-news_centre_latest_media_news_details</option>
+
+                                    </optgroup>
+
+                                    <optgroup label="bursa.ock.net.my">
+                                        <option <?php echo in_array(62,$pageArray)?'selected':''; ?> value="62">-Home</option>
+                                        <option value="">-Corporate Information</option>
+                                        <option <?php echo in_array(20,$pageArray)?'selected':''; ?> value="20">&nbsp; --General</option>
+                                        <option <?php echo in_array(21,$pageArray)?'selected':''; ?> value="21">&nbsp; --Director's Profile</option>
+                                        <option <?php echo in_array(22,$pageArray)?'selected':''; ?> value="22">&nbsp; --Key Management Team</option>
+                                        <option <?php echo in_array(23,$pageArray)?'selected':''; ?> value="23">&nbsp; --Our Properties</option>
+                                        <option <?php echo in_array(24,$pageArray)?'selected':''; ?> value="24">&nbsp; --Our Subsidiaries</option>
+                                        <option <?php echo in_array(26,$pageArray)?'selected':''; ?> value="26">-Corporate Governance</option>
+                                        <option value="">-IPO Centre</option>
+                                        <option <?php echo in_array(27,$pageArray)?'selected':''; ?> value="27">&nbsp; --IPO Statistics</option>
+                                        <option <?php echo in_array(28,$pageArray)?'selected':''; ?> value="28">&nbsp; --Competitive Advantages</option>
+                                        <option <?php echo in_array(29,$pageArray)?'selected':''; ?> value="29">&nbsp; --Risk Factors</option>
+                                        <option <?php echo in_array(30,$pageArray)?'selected':''; ?> value="30">&nbsp; --Utilisation of Proceeds</option>
+                                        <option <?php echo in_array(31,$pageArray)?'selected':''; ?> value="31">&nbsp; --Industry Overview</option>
+                                        <option value="">-Share Information</option>
+                                        <option <?php echo in_array(32,$pageArray)?'selected':''; ?> value="32">&nbsp; --Price Ticker</option>
+                                        <option <?php echo in_array(33,$pageArray)?'selected':''; ?> value="33">&nbsp; --Stock Charts</option>
+                                        <option <?php echo in_array(34,$pageArray)?'selected':''; ?> value="34">&nbsp; --Price &amp; Volume</option>
+                                        <option <?php echo in_array(35,$pageArray)?'selected':''; ?> value="35">&nbsp; --Analysis of Shareholdings</option>
+                                        <option <?php echo in_array(36,$pageArray)?'selected':''; ?> value="36">&nbsp; --Top 30 Shareholders</option>
+                                        <option <?php echo in_array(37,$pageArray)?'selected':''; ?> value="37">-Entitlements</option>
+                                        <option  value="">-Financial Information</option>
+                                        <option <?php echo in_array(38,$pageArray)?'selected':''; ?> value="38">&nbsp; --Financial Highlights</option>
+                                        <option <?php echo in_array(39,$pageArray)?'selected':''; ?> value="39">&nbsp; --Comprehensive Income</option>
+                                        <option <?php echo in_array(40,$pageArray)?'selected':''; ?> value="40">&nbsp; --Financial Position</option>
+                                        <option <?php echo in_array(41,$pageArray)?'selected':''; ?> value="41">&nbsp; --Cash Flow Statement</option>
+                                        <option <?php echo in_array(42,$pageArray)?'selected':''; ?> value="42">&nbsp; --Statement of Changes In Equity</option>
+                                        <option <?php echo in_array(43,$pageArray)?'selected':''; ?> value="43">&nbsp; --Latest Quarterly Report</option>
+                                        <option <?php echo in_array(44,$pageArray)?'selected':''; ?> value="44">&nbsp; --Segmental Analysis</option>
+                                        <option <?php echo in_array(45,$pageArray)?'selected':''; ?> value="45">&nbsp; --Ratio Analysis</option>
+                                        <option  value="">-Management Analysis</option>
+                                        <option <?php echo in_array(46,$pageArray)?'selected':''; ?> value="46">&nbsp; --Chairman's Statement</option>
+                                        <option <?php echo in_array(47,$pageArray)?'selected':''; ?> value="47">&nbsp; --Review Of Operations</option>
+                                        <option <?php echo in_array(48,$pageArray)?'selected':''; ?> value="48">&nbsp; --Past Performance Review</option>
+
+                                        <option value="">-News Centre</option>
+                                        <option <?php echo in_array(49,$pageArray)?'selected':''; ?> value="49">&nbsp; --Bursa Announcements</option>
+                                        <option <?php echo in_array(50,$pageArray)?'selected':''; ?> value="50">&nbsp; --Bursa Announcements details</option>
+
+
+                                        <option value="">-Reports</option>
+                                        <option <?php echo in_array(51,$pageArray)?'selected':''; ?> value="51">&nbsp; --Annual Reports</option>
+                                        <option <?php echo in_array(52,$pageArray)?'selected':''; ?> value="52">&nbsp; --Annual Audited Accounts</option>
+                                        <option <?php echo in_array(53,$pageArray)?'selected':''; ?> value="53">&nbsp; --Quarterly Reports</option>
+                                        <option <?php echo in_array(54,$pageArray)?'selected':''; ?> value="54">&nbsp; --Circulars</option>
+                                        <option <?php echo in_array(55,$pageArray)?'selected':''; ?> value="55">&nbsp; --Prospectus</option>
+                                        <option <?php echo in_array(56,$pageArray)?'selected':''; ?> value="56">&nbsp; --Analyst Reports</option>
+
+                                        <option value="">-Investor Tools</option>
+                                        <option <?php echo in_array(57,$pageArray)?'selected':''; ?> value="57">&nbsp; --News Alert</option>
+
+                                        <option <?php echo in_array(58,$pageArray)?'selected':''; ?> value="58">-Event Calendar</option>
+
+                                        <option value="">-CONTACT US</option>
+                                        <option <?php echo in_array(59,$pageArray)?'selected':''; ?> value="59">&nbsp; --Contact Us</option>
+                                        <option <?php echo in_array(60,$pageArray)?'selected':''; ?> value="60">&nbsp; --Enquiry</option>
+                                        <option <?php echo in_array(61,$pageArray)?'selected':''; ?> value="61">&nbsp; --Regional Offices</option>
+
+                                    </optgroup>
+
+
+
+
+                                        
+
+                                     </select>
+
+
+                                           </div>
+                                         </div>
+                                      <?php echo Form::hidden('id',$ban->id); ?>
+
+                                      <div class="form-actions">
+                                        <div class="col-md-offset-5 col-md-8"> 
+
+<button type="submit" class="btn btn-red">Save &nbsp;<i class="fa fa-floppy-o"></i></button>&nbsp; <a href="#" data-dismiss="modal" class="btn btn-green">Cancel &nbsp;<i class="glyphicon glyphicon-ban-circle"></i></a>
+
+
+                                        </div>
+                                      </div>
+                                    <?php echo Form::close(); ?>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                         
+                          <!--END MODAL Edit Montage-->
+                            <!--Modal delete start-->
+
+                            <?php echo Form::open(array('url' => 'deletebanner/'.$ban->id,"method" => "post","class"=>"form-horizontal")); ?>
+
+                            <div id="modal-delete-<?php echo $ban->id; ?>" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true" class="modal fade">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+                                    <h4 id="modal-login-label3" class="modal-title"><a href=""><i class="fa fa-exclamation-triangle"></i></a> Are you sure you want to delete this banner? </h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    <p><strong>#<?php echo $ban->id; ?>:</strong> <?php echo $ban->title; ?><br/>
+                                    <img src="<?php echo url().'/uploads/banners/'.$ban->banner; ?>" alt="" class="img-responsive">
+                                    </p>
+                                    <div class="form-actions">
+                                      <div class="col-md-offset-4 col-md-8"> 
+
+
+                                      <?php echo Form::button(
+                                                'Yes &nbsp;<i class="fa fa-check"></i>',
+                                                array(
+                                                    'class'=>'btn btn-red',
+                                                    'type'=>'submit')); ?>
+
+
+
+
+                                      <a href="#" data-dismiss="modal" class="btn btn-green">No &nbsp;<i class="fa fa-times-circle"></i></a> 
+
+                                      
+
+
+
+
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                           <?php echo Form::close(); ?>
+
+                          <!-- modal delete end -->
+                           
+                        </td>
+                      </tr>
+                       <?php $k++;?>
+                       <?php endforeach; ?>
+                      
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td colspan="5"></td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                  <div class="tool-footer text-right">
+                    <p class="pull-left">
+
+                    Showing <?php echo $banners->getFrom(); ?> to <?php echo $banners->getTo(); ?> of <?php echo $banners->getTotal(); ?> entries</p>
+                    <?php echo $banners->links(); ?>
+
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+              <!-- End porlet -->
+              
+              
+            </div>
+          </div>
+        </div>
+        <!--END CONTENT-->
+            
+            <!--BEGIN FOOTER-->
+            <div class="page-footer">
+                <div class="copyright"><span class="text-15px">2014 © <a href="http://www.webqom.com" target="_blank">Webqom Technologies Sdn Bhd.</a> Any queries, please contact <a href="mailto:support@webqom.com">Webqom Support</a>.</span>
+                  <div class="pull-right"><img src="<?php echo asset('assets/images/logo_webqom.png'); ?>" alt="Webqom Technologies"></div>
+                </div>
+            </div>
+    <!--END FOOTER--></div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('scripts'); ?>
+<script>
+  
+ $('.deleteid').click(function () {
+       var page = $(this).attr('rel');
+       var idloc = $(this).attr('rev');
+       if ($('.chkNumber:checked').length) {
+          var chkId = '';
+          $('.chkNumber:checked').each(function () {
+            chkId += $(this).val() + ",";
+          });
+          chkId = chkId.slice(0, -1);
+        //  alert(chkId);
+        $('#'+idloc+'').modal('show');
+         $('#'+idloc+'').find('.form-actions').html('<form method="POST" action="'+page+'" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data"><input type="hidden" name="deleteid[]" value="'+chkId+'"><div class="col-md-offset-4 col-md-8"> <button type="submit" class="btn btn-red">Yes &nbsp;<i class="fa fa-floppy-o"></i></button>&nbsp; <a href="#" data-dismiss="modal" class="btn btn-green">No &nbsp;<i class="glyphicon glyphicon-ban-circle"></i></a> </div></form>') 
+        }
+        else {
+          alert('Nothing Selected');
+         
+        }
+       
+      
+    });
+
+  $('.wholecheck').change(function () {
+    if ($(this).prop('checked')) {
+    $('.chkNumber').prop('checked', true);
+    }
+    else {
+        $('.chkNumber').prop('checked', false);
+    }
+});
+$('.wholecheck').trigger('change');
+
+
+</script>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

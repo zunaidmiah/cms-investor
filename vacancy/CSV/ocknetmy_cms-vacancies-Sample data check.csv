@@ -1,0 +1,2 @@
+"id","name","DOB","Email","ContactNumber","MobileNumber","EducationLevel","Address","City","State","PostalCode","Country","CV","JobName","created_at","updated_at","career_vacancy_id"
+"307","Sample data check","15/11/1986","sample@sample.com","123789123","5555444333","HigherLevel","checking","test","qqqq","52200","Malaysia","Sample data check-SampleCV.docx","Internship for Business Studies / Administration Students","2016-02-24 10:38:40","2016-02-24 10:38:40","74"

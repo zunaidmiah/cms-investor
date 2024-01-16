@@ -1,0 +1,2 @@
+id,name,DOB,Email,ContactNumber,MobileNumber,EducationLevel,Address,City,State,PostalCode,Country,CV,JobName,created_at,updated_at,career_vacancy_id
+155,Oppo,21/10/2015,clpang@clpang.com.my,268238614,123790200,ProfessionalDegree,"15, Jalan USJ 9/5P",Alor Setar,Kedah,60000,Malaysia,Oppo-resume.pdf,GM,21/10/2015 9:21,21/10/2015 9:21,91

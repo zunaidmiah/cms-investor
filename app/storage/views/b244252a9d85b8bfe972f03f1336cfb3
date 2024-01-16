@@ -1,0 +1,48 @@
+<header class="slide">
+            <!-- nav_logo-->
+            <?php echo $__env->make('includes.top_nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <!-- End nav_logo-->
+<?php if(Request::Segment(1)==''): ?>
+            <div class="camera_wrap" id="slide">
+                 <?php foreach($montages as $montage): ?>
+                <!-- Item Slide -->
+                <div  data-src="<?php echo URL::asset('uploads/slides/'.$montage->Banner); ?>">
+                    <div class="camera_caption fadeFromLeft">
+                        <div class="container">
+                            <div class="row-fluid">
+                                <div class="span8">
+                                     <?php echo $montage->body; ?>
+
+                                     <?php if($montage->MoreStatus == 1): ?>
+                                    <a href="<?php echo $montage->url; ?>" class="button animated fadeInUp">
+                                        <span><i class="icon-hand-right"></i></span>Explore More</a>
+                                     <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+                </div>
+                <!-- End Item Slide -->
+                <?php endforeach; ?>
+                <!-- Item Slide -->
+
+                 <!-- End Item Slide -->
+
+                 <!-- Item Slide -->
+
+                 <!-- End Item Slide -->
+
+                 <!-- Item Slide -->
+
+                 <!-- End Item Slide -->
+
+                  <!-- Item Slide -->
+
+                 <!-- End Item Slide -->
+            </div> 
+            <?php else: ?>
+<div class="banner_subpage5"></div> 
+
+
+            <?php endif; ?>
+        </header>

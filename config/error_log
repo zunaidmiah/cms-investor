@@ -1,0 +1,5 @@
+[28-May-2023 21:56:10 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function storage_path() in /home/lienhoecorporati/public_html/config/cache.php on line 31
+[02-Jun-2023 18:09:34 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function storage_path() in /home/lienhoecorporati/public_html/config/cache.php on line 31
+[03-Jun-2023 05:52:13 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function storage_path() in /home/lienhoecorporati/public_html/config/cache.php on line 31
+[01-Jul-2023 23:21:59 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function storage_path() in /home/lienhoecorporati/public_html/config/cache.php on line 31
+[28-Jul-2023 17:36:35 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function storage_path() in /home/lienhoecorporati/public_html/config/cache.php on line 31

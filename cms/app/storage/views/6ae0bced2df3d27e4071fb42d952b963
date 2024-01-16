@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US" data-menu="leftalign">
+  <head>
+	<?php echo $__env->make('includes.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	 <style>
+	 <?php if(Request::segment(1)!='' && !empty($banner)): ?>
+   .elementor-5733 .elementor-element.elementor-element-3fa2ab8 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+
+                background-image: url(http://cms.fareastholdingsbhd.com/uploads/banners/<?php echo $banner; ?>);
+                background-repeat: no-repeat;
+                background-position: center top;
+                height: 400px;
+                width: 100%;
+            
+        }
+        <?php endif; ?>
+    </style>
+</head>
+<body data-rsssl="1" class="home page-template-default page page-id-4074 theme-avante woocommerce-no-js menu-transparent lightbox-black leftalign footer-reveal elementor-default elementor-page elementor-page-4074">
+
+<?php echo $__env->make('includes.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->yieldContent('content'); ?>
+<?php echo $__env->make('includes.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>	
+<?php echo $__env->yieldContent('js'); ?>
+</body>
+</html>

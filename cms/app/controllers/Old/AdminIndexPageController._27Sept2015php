@@ -1,0 +1,59 @@
+<?php
+
+class AdminIndexPageController extends BaseController {
+
+
+
+	public function showIndexPageEditor()
+	{
+
+            if (!Session::has('user')) {
+                return Redirect::to('ListDeedAdmin');
+            }
+
+            if(Session::has('per_page'))
+            {
+                $paginate=Session::get('per_page');
+            }
+            else{
+                $paginate=10;
+            }
+
+            $current_page = max(1, Input::get('page'));
+            $start = (($current_page - 1) * $paginate ) + 1;
+            $end = $start + $paginate-1;
+            $total = Montage::count();
+
+
+
+            $Business = CoreBusiness::all();
+            $montages = Montage::paginate($paginate);
+            $page = Page::find(1);
+            $user = Session::get('user');
+            return View::make('admin.index_edit')
+                    ->with('user', $user)
+                    ->with('businesses_create', $Business)
+                    ->with('montages', $montages)
+                    ->with('page', $page)
+                    ->with('start',$start)
+                    ->with('end',$end)
+                    ->with('total',$total);
+	}
+
+    public function delete_by_selection(){
+            
+         $input=Input::get('del');        
+          Montage::destroy($input);
+         return Redirect::back()->with('message','Selected Item Deleted Successfully');
+                 
+    }
+
+
+    public function set_paginate(){
+        $id=Input::get('id');
+        Session::put('per_page',$id);
+
+        return Redirect::back();
+    }
+
+}

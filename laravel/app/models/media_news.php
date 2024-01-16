@@ -1,0 +1,268 @@
+<?php
+
+use Illuminate\Auth\UserTrait;
+use Illuminate\Auth\UserInterface;
+use Illuminate\Auth\Reminders\RemindableTrait;
+use Illuminate\Auth\Reminders\RemindableInterface;
+
+class Medianews extends Eloquent {
+
+	use UserTrait, RemindableTrait;
+
+	/**
+	 * The database table used by the model.
+	 *
+	 * @var string
+	 */
+	protected $table = 'media_news';
+
+	/**
+	 * The attributes excluded from the model's JSON form.
+	 *
+	 * @var array
+	 */
+	protected $hidden = array('password', 'remember_token');
+        
+        public function insertMediaNews($data)
+        {
+            $this->date = $data['date'];
+            $this->title = $data['title'];
+            $this->heading = $data['heading'];
+            $this->footer = $data['footer'];
+            $this->content = $data['content'];
+            $this->news_image = $data['news_image'];
+            $this->status = $data['status'];
+            $this->created_at = date("Y-m-d H:i:s", time());
+            $this->updated_at = date("Y-m-d H:i:s", time());
+            $this->save();
+            return $this->id;
+        }
+        
+        /*
+        public function insertScraper($data)
+        {
+            $data['created_at'] = date("Y-m-d H:i:s", time());
+            $data['updated_at'] = date("Y-m-d H:i:s", time());
+            
+            return $this::insertGetId($data);
+        }
+        */
+        
+        
+        public function insertScraper($data)
+        {
+            /*
+            $this->date = $data['date'];
+            $this->title = $data['title'];
+            $this->link = $data['link'];
+            $this->heading = '';
+            $this->footer = $data['footer'];
+            $this->content = $data['content'];
+            $this->news_image = '';
+            $this->status = $data['status'];
+            $this->created_at = date("Y-m-d H:i:s", time());
+            $this->updated_at = date("Y-m-d H:i:s", time());
+            $this->save();
+            return $this->id;
+            */
+            
+            $data['date'] = $data['date'];
+            $data['title'] = $data['title'];
+            $data['link'] = $data['link'];
+            $data['heading'] = '';
+            $data['footer'] = $data['footer'];
+            $data['content'] = $data['content'];
+            $data['news_image'] = '';
+            $data['status'] = $data['status'];
+            $data['created_at'] = date("Y-m-d H:i:s", time());
+            $data['updated_at'] = date("Y-m-d H:i:s", time());
+            
+            return $this::insertGetId($data);
+            
+        }
+        
+        
+        
+        public function insertAllScraper($data)
+        {   
+            return $this::insert($data);
+        }
+        
+        public function getAll($number_of_record = null)
+        {
+            if(!empty($number_of_record)){
+                //return $this::paginate($number_of_record);
+                return $this::orderBy('created_at', 'desc')->paginate($number_of_record);
+            }else{
+                return $this::all();
+            }
+            
+            //return $this::all()->paginate(2);
+        }
+        
+        public function getMediaNews($id)
+        {
+            return $this::find($id);
+        }
+        
+        public function getMediaNewsWithConditions($conditions)
+        {
+            return $this::where(array_keys($conditions)[0], array_values($conditions)[0])->pluck('id');
+        }
+        
+        public function getMediaNewsWithConditionsString($conditions)
+        {
+            return $this::where(array_keys($conditions)[0], (string)array_values($conditions)[0])->pluck('id');
+        }
+
+        public function getMediaNewsBetweenDates($fromTime, $toTime)
+        {
+            return $this::whereBetween('date', array($fromTime, $toTime))
+                    //->orWhere('status', 1)
+                    ->where('status', 1)
+                    ->orderBy('date', 'desc')
+                    ->get();
+        }
+        
+        public function getNewsFromTitles($titles)
+        {
+            if(count($titles) == 1){
+                return $this::where('title', $titles[0])->get();
+                
+            }else{
+                $conditionsImplode = implode(',', $titles);
+                $query = $this::query();
+                foreach ($titles as $value) {
+                    //$this->orWhere('title', $value);
+                     $query = $query->orWhere('title', $value);
+                }
+                return $query->get();
+                //return $this::whereTitle($titles)->get();
+                
+            }
+            
+        }
+        
+        public function updateSingle($data)
+        {
+            $mediaNews = $this::find($data['id']);
+            $mediaNews->date = $data['date'];
+            $mediaNews->title = $data['title'];
+            $mediaNews->heading = $data['heading'];
+            $mediaNews->footer = $data['footer'];
+            $mediaNews->content = $data['content'];
+            $mediaNews->news_image = $data['news_image'];
+            $mediaNews->status = $data['status'];
+            $mediaNews->updated_at = date("Y-m-d H:i:s", time());
+            
+            $mediaNews->save();
+            return $mediaNews->id;
+        }
+        
+        public function updateSingleScraper($data)
+        {
+            $mediaNews = $this::find($data['id']);
+            $mediaNews->date = $data['date'];
+            $mediaNews->title = $data['title'];
+            $mediaNews->link = $data['link'];
+            $mediaNews->footer = $data['footer'];
+            $mediaNews->content = $data['content'];
+            $mediaNews->status = $data['status'];
+            $mediaNews->updated_at = date("Y-m-d H:i:s", time());
+            
+            $mediaNews->save();
+            return $mediaNews->id;
+        }
+		
+		public function updateEmailSentStatus($newsId)
+        {
+            $mediaNews = $this::find($newsId);
+            $mediaNews->email_sent = 1;
+            $mediaNews->save();
+        }
+        
+        public function deleteMediaNews($id)
+        {
+            $mediaNews = $this::find($id);
+            $mediaNews->delete();
+            return $mediaNews->id;
+        }
+        
+        public function deleteMultipleMediaNews($id)
+        {
+            if(is_string($id) && $id == 'all'){
+                $this::truncate();
+            }else{
+                $this::destroy($id);
+            }
+            
+            return true;
+        }
+        
+        public function publishSelected($newsIds){
+            
+            if($newsIds){
+                /*$mediaNews = $this::find($newsIds);
+                $mediaNews->status = 1;
+                $mediaNews->updated_at = date("Y-m-d H:i:s", time());
+
+                $mediaNews->save();
+                */
+                
+                $explodedIds = explode(',', $newsIds);
+                
+                $conditions['status'] = 1;
+                $conditions['updated_at'] = date("Y-m-d H:i:s", time());
+                
+                $result = $this::whereIn('id', $explodedIds)->update($conditions);
+                
+                if($result){
+                    return 1;
+                }else{
+                    return false;
+                }
+                
+            }else{
+                return false;
+            }
+            
+        }
+        
+        public function getMinNews($field = 'date'){
+            return $this::where('status', '1')->min($field);
+        }
+        
+        public function getMaxNews($field = 'date'){
+            return $this::where('status', '1')->max($field);
+        }
+        
+        public function getMediaNewsList($param1, $param2 = null, $scraping_url_id = null)
+        {
+            if(!$param2){
+                $param2  = 'id';
+            }
+            if($scraping_url_id){
+                return $this::where('scraping_url_id', $scraping_url_id)->lists($param1, $param2);
+            }else{
+                return $this::lists($param1, $param2);
+            }
+        }
+        
+        public function getValidYearsList()
+        {
+            return $this::select(DB::raw("DISTINCT(DATE_FORMAT(FROM_UNIXTIME(date), '%Y')) AS year"))
+                        ->where('status', 1)
+                        ->orderBy('year', 'desc')
+                        ->get();
+        }
+
+        public function fillData($data)
+        {
+            foreach ($data as $field => $val) {
+                $this->$field = $val;    
+            }
+            $this->created_at = date("Y-m-d H:i:s", time());
+            $this->updated_at = date("Y-m-d H:i:s", time());
+        }
+        
+}

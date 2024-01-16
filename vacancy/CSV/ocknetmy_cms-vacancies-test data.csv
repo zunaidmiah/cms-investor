@@ -1,0 +1,2 @@
+"id","name","DOB","Email","ContactNumber","MobileNumber","EducationLevel","Address","City","State","PostalCode","Country","CV","JobName","created_at","updated_at","career_vacancy_id"
+"301","test data","11/11/1989","tset@test.com","123213123","23443","HigherLevel","test","test","test","23424","Malaysia","test data-P  Saravanan 2015 CV.doc","Internship for Business Studies / Administration Students","2016-02-17 07:49:22","2016-02-17 07:49:22","74"
